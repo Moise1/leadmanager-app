@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 import dj_database_url
+import django_heroku
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,7 +83,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config() 
+# DATABASES['default'] = dj_database_url.config() 
 
 
 
@@ -122,5 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT ='staticfiles'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORATE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
