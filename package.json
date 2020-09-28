@@ -1,0 +1,55 @@
+{
+  "name": "LeadManager",
+  "version": "1.0.0",
+  "description": "This is a Django + React app for managing leads.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./leadmanager/client/src/index.js --output ./leadmanager/client/static/client/main.js",
+    "build": "webpack --mode production ./leadmanager/client/src/index.js --output ./leadmanager/client/static/client/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moise1/LeadManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moise1/LeadManager/issues"
+  },
+  "homepage": "https://github.com/Moise1/LeadManager#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "axios": "^0.20.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^6.1.2",
+    "redux-thunk": "^2.3.0"
+  },
+  "engines": {
+    "node": "14.0.0",
+    "npm": "6.14.5"
+  }
+}
