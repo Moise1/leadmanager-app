@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import * as leadsActions from '../../redux/actions/leadsActions'
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
+import { CircularProgress } from '@material-ui/core'
 
 class Leads extends React.Component {
 
@@ -11,10 +12,18 @@ class Leads extends React.Component {
         this.props.getLeads();
     };
 
-    
+
     render() {
         return (
             <Fragment>
+
+                {
+                    this.props.leads.loading === 'block' ?
+                        <CircularProgress
+                            variant="static"
+                            size={25}
+                            color="inherit"/> : null
+                }
                 <table className="table table-striped">
                     <thead>
                         <tr>

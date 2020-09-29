@@ -12,13 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '7g$2j8ju7(jf=!d0!m%xfyqb!wx&tp@b011fpyr#^erp1$i9zy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    '0.0.0.0',
-    'localhost',
-    'leadmanager-app.herokuapp.com'
-]
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'leadmanager-app.herokuapp.com' ]
 
 
 # Application definition
@@ -83,8 +79,8 @@ DATABASES = {
     }
 }
 
-# DATABASES['default'] = dj_database_url.config() 
-
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -124,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT ='staticfiles'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORATE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 django_heroku.settings(locals())

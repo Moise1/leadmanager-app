@@ -4,8 +4,10 @@
   "description": "This is a Django + React app for managing leads.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./leadmanager/client/src/index.js --output ./leadmanager/client/static/client/main.js",
-    "build": "webpack --mode production ./leadmanager/client/src/index.js --output ./leadmanager/client/static/client/main.js"
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "start": "serve -s ./leadmanager/client/static/client",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.20.0",
+    "html-webpack-plugin": "^4.5.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-alert": "^7.0.2",
@@ -47,7 +50,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^6.1.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2"
   },
   "engines": {
     "node": "14.0.0",
